@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Klaud9 Bank</title>
+</head>
+<body>
+  <div id="main-img-wrapper">
+    <img src="./Lovepik_com-401339128-data-management-data-analysis-icon-free-vector-illustration-mate.png" width="320px" alt="codingimg">
+  </div>
+  <div id="intro-main">
+    <p>이미 모두의 은행, 클라우드나인</p>
+    <p>함께 일해요.</p>
+    <p id="join-us-text">Join us!</p>
+    <img src="./down-arrow.png" alt="down arrow icon" id="down-arrow-icon">
+  </div>
+  <ul id="list-item-wrapper">
+    <li class="list-item">26주적금</li>
+    <li class="list-item">저축</li>
+    <li class="list-item">감자</li>
+    <li class="list-item">예빈</li>
+    <li class="list-item">주제없음</li>
+    <li class="list-item">강정바</li>
+    <li class="list-item">새컴퓨터</li>
+    <li class="list-item">유저인사이트</li>
+    <li class="list-item">정처기</li>
+    <li class="list-item">브론즈</li>
+    <li class="list-item">아이언</li>
+    <li class="list-item">골드</li>
+    <li class="list-item">플레티넘</li>
+    <li class="list-item">26주적금</li>
+    <li class="list-item">저축</li>
+    <li class="list-item">감자</li>
+    <li class="list-item">예빈</li>
+    <li class="list-item">주제없음</li>
+    <li class="list-item">강정바</li>
+    <li class="list-item">새컴퓨터</li>
+    <li class="list-item">유저인사이트</li>
+    <li class="list-item">정처기</li>
+    <li class="list-item">브론즈</li>
+    <li class="list-item">아이언</li>
+    <li class="list-item">골드</li>
+    <li class="list-item">플레티넘</li>
+    <li class="list-item">26주적금</li>
+    <li class="list-item">저축</li>
+    <li class="list-item">감자</li>
+    <li class="list-item">예빈</li>
+    <li class="list-item">주제없음</li>
+    <li class="list-item">강정바</li>
+    <li class="list-item">새컴퓨터</li>
+    <li class="list-item">유저인사이트</li>
+    <li class="list-item">정처기</li>
+    <li class="list-item">브론즈</li>
+    <li class="list-item">아이언</li>
+    <li class="list-item">골드</li>
+    <li class="list-item">플레티넘</li>
+  </ul>
+  <main>
+    <section id="panel1-img">
+      <img id="flying-santa-image" src="./santa_flying.png" alt="santa flying">
+    </section>
+  </main>
+
+</body>
+
+<script>
+
+  //메인초기 텍스트 애니메이션
+  const listStyleChangeStartY = 385;
+  const listStyleChangeEndY = 1300;
+  
+  const listItems = document.querySelectorAll('.list-item');
+  
+  const division = (listStyleChangeEndY - listStyleChangeStartY) / listItems.length
+
+  const panel1Img = document.getElementById('panel1-img')
+
+  window.addEventListener("scroll", () => {
+
+    if (document.getElementById("on")) document.getElementById("on").removeAttribute("id")
+
+    if (window.scrollY > listStyleChangeStartY && window.scrollY < listStyleChangeEndY) {
+      const targetIndex = Math.round((window.scrollY - listStyleChangeStartY) / division)
+      // console.log(targetIndex)
+      if(listItems[targetIndex]) listItems[targetIndex].id = "on"
+    }
+
+    const scrollYBottom = window.scrollY + document.documentElement.clientHeight
+
+    if (scrollYBottom > panel1Img.offsetTop && panel1Img.offsetTop + panel1Img.offsetHeight) {
+      console.log('over');
+    }
+  })
+</script>
+</html>
